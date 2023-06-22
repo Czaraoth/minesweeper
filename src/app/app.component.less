@@ -1,0 +1,75 @@
+.board {
+  display: flex;
+  width: 400px;
+  margin-bottom: 20px;
+  align-content: center;
+  margin-left: 80px;
+}
+
+.cell {
+  width: 30px;
+  height: 30px;
+  background-color: #ddd;
+  border: 1px solid #aaa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.cell:hover {
+  background-color: #bbb;
+}
+
+.cell.revealed {
+  background-color: #ccc;
+}
+.cell.empty {
+  background-color: #ddd;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.cell.mine {
+  background-image: url('src/assets/images/mine.png');
+  background-size: cover;
+}
+.cell.number-1 {
+  color: blue;
+}
+
+.cell.number-2 {
+  color: green;
+}
+
+.cell.number-3 {
+  color: red;
+}
+
+.cell.number-4 {
+  color: navy;
+}
+
+.cell.number-5 {
+  color: darkgreen;
+}
+
+.cell.number-6 {
+  color: black;
+}
+.info{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: center;
+}
+#game, .startGame{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
