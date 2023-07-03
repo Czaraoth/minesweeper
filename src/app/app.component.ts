@@ -22,6 +22,7 @@ export class AppComponent implements OnInit {
   timerInterval: any;
   time:string;
   math = Math;
+  win=false;
   constructor() {
     this.rows = 10;
     this.columns = 10;
@@ -43,6 +44,7 @@ export class AppComponent implements OnInit {
     this.board = [];
     this.gameOver = false;
     this.gameStarted = false;
+    this.win=false;
     this.generateBoard();
   }
 
@@ -130,9 +132,13 @@ export class AppComponent implements OnInit {
         this.revealEmptyNeighbors(row, col);
       }
     }
-    if (this.checkWinCondition()) {
+    if (this.checkWinCondition() && !this.gameOver) {
       clearInterval(this.timerInterval);
-      alert("Wygrałeś!")
+      if(!this.win){
+        alert("Wygrałeś!")
+        this.win=true;
+      }
+
     }
   }
   revealEmptyNeighbors(row: number, col: number): void {
